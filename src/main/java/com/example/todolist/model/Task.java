@@ -13,9 +13,11 @@ public class Task {
     private String nome;
     private String descricao;
     private boolean concluido;
+    private boolean atrasada;
 
     private LocalDate dataCriacao;
     private LocalDate dataConclusao;
+    private LocalDate prazo;
 
     @PrePersist
     public void prePersist() {
@@ -71,4 +73,19 @@ public class Task {
         this.dataConclusao = dataConclusao;
     }
 
+    public void setPrazo(LocalDate prazo) {
+        this.prazo = prazo;
+    }
+
+    public LocalDate getPrazo() {
+        return prazo;
+    }
+
+    public boolean isAtrasada() {
+        return atrasada;
+    }
+
+    public void setAtrasada(boolean atrasada) {
+        this.atrasada = atrasada;
+    }
 }

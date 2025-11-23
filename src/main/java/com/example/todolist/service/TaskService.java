@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @Service
 public class TaskService {
 
-    private final TaskRepository repository;
+    protected final TaskRepository repository;
 
     public TaskService(TaskRepository repository) {
         this.repository = repository;
@@ -28,6 +28,8 @@ public class TaskService {
         Task task = new Task();
         task.setNome(dto.getNome());
         task.setDescricao(dto.getDescricao());
+        task.setPrazo(dto.getPrazo());
+        task.setAtrasada(false);
         return repository.save(task);
     }
 
