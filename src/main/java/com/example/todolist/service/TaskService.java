@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @Service
 public class TaskService {
 
-    protected final TaskRepository repository;
+    private final TaskRepository repository;
 
     public TaskService(TaskRepository repository) {
         this.repository = repository;
