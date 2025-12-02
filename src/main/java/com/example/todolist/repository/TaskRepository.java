@@ -1,10 +1,15 @@
 package com.example.todolist.repository;
 
 import com.example.todolist.model.Task;
+import com.example.todolist.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface TaskRepository extends JpaRepository<Task, Long> {
-    boolean existsByNome(String nome);
+import java.util.List;
 
+public interface TaskRepository extends JpaRepository<Task, Long> {
+
+    boolean existsByNome(String nome);
     boolean existsByNomeAndDescricao(String nome, String descricao);
+
+    List<Task> findByUser(User user);
 }
